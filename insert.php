@@ -1,4 +1,5 @@
 <?php
+
 require 'connect.php';
 
 // Headers
@@ -13,7 +14,7 @@ if(isset($postdata) && !empty($postdata))
 {
   $request = json_decode($postdata);
 
-  print_r($request);
+  // print_r($request);
 
   // sanitise
   $fName = $request->first_name;
