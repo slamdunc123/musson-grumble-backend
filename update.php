@@ -30,7 +30,7 @@ $sql = "UPDATE `students` SET `fName`='$fName', `lName`='$lName', `email`='$emai
 
 if(mysqli_query($con, $sql))
   {
-    http_response_code(204);
+    http_response_code(200);
   }
   else{
     http_response_code(422);
