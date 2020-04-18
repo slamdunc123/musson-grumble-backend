@@ -23,6 +23,7 @@ if($result = mysqli_query($con, $sql))
   {
     $recipes[$cr]['id'] = $row['id'];
     $recipes[$cr]['name'] = $row['name'];
+    $recipes[$cr]['c_id'] = $row['c_id'];
     $recipes[$cr]['c_name'] = $row['c_name'];
     $recipes[$cr]['description'] = $row['description'];
     $recipes[$cr]['ingredients'] = $row['ingredients'];
