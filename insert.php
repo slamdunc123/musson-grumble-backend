@@ -14,22 +14,31 @@ if(isset($postdata) && !empty($postdata))
 {
   $request = json_decode($postdata);
 
-  // print_r($request);
+  print_r($request);
 
   // sanitise
-  $fName = $request->first_name;
-  $lName = $request->last_name;
-  $email = $request->email;
+  $name = $request->name;
+  $category_id = $request->categoryId;
+  $description = $request->description;
+  $ingredients = $request->ingredients;
+  $instructions = $request->instructions;
+  $suggestions = $request->suggestions;
 
   // store 
-  $sql = "INSERT INTO `students`(
-    `fName`,
-    `lName`,
-    `email`
+  $sql = "INSERT INTO `recipes`(
+    `name`,
+    `category_id`,
+    `description`,
+    `ingredients`,
+    `instructions`,
+    `suggestions`
   ) VALUES (
-    '{$fName}',
-    '{$lName}',
-    '{$email}'
+    '{$name}',
+    '{$category_id}',
+    '{$description}',
+    '{$ingredients}',
+    '{$instructions}',
+    '{$suggestions}'
   )";
 
   if(mysqli_query($con, $sql))

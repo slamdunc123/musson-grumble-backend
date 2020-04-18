@@ -11,7 +11,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 
 $id=$_GET['id'];
 
-echo $sql = "DELETE FROM `students` WHERE `sId` = '{$id}' LIMIT 1";
+echo $sql = "DELETE FROM `recipes` WHERE `id` = '{$id}' LIMIT 1";
 
 if(mysqli_query($con, $sql))
 {

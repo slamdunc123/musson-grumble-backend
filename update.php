@@ -21,12 +21,15 @@ if(isset($postdata) && !empty($postdata))
   // sanitise
   $id = $_GET['id'];
   // $id = $request->id;
-  $fName = $request->first_name;
-  $lName = $request->last_name;
-  $email = $request->email;
+  $name = $request->name;
+  $categoryId = $request->categoryId;
+  $description = $request->description;
+  $ingredients = $request->ingredients;
+  $instructions = $request->instructions;
+  $suggestions = $request->suggestions;
 
   // update 
-$sql = "UPDATE `students` SET `fName`='$fName', `lName`='$lName', `email`='$email' WHERE `sId` = '{$id}' LIMIT 1";
+$sql = "UPDATE `recipes` SET `name`='$name', `category_id`='$categoryId', `description`='$description', `ingredients`='$ingredients', `instructions`='$instructions', `suggestions`='$suggestions' WHERE `id` = '{$id}' LIMIT 1";
 
 if(mysqli_query($con, $sql))
   {

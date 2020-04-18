@@ -11,25 +11,29 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 
 error_reporting(E_ERROR);
 
-$students = [];
+$recipes = [];
 
-$sql = "SELECT * FROM students";
+// $sql = "SELECT * FROM recipes";
+$sql = "SELECT recipes.id as id, recipes.name as name, recipes.category_id as c_id, recipes.description as description, recipes.ingredients as ingredients, recipes.instructions as instructions, recipes.suggestions as suggestions, categories.name as c_name FROM recipes, categories WHERE recipes.category_id = categories.id ORDER BY categories.name ASC";
 
 if($result = mysqli_query($con, $sql))
 {
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $students[$cr]['sId'] = $row['sId'];
-    $students[$cr]['fName'] = $row['fName'];
-    $students[$cr]['lName'] = $row['lName'];
-    $students[$cr]['email'] = $row['email'];
+    $recipes[$cr]['id'] = $row['id'];
+    $recipes[$cr]['name'] = $row['name'];
+    $recipes[$cr]['c_name'] = $row['c_name'];
+    $recipes[$cr]['description'] = $row['description'];
+    $recipes[$cr]['ingredients'] = $row['ingredients'];
+    $recipes[$cr]['instructions'] = $row['instructions'];
+    $recipes[$cr]['suggestions'] = $row['suggestions'];
     $cr++;
   }
 
   // print_r($students);
 
-  echo json_encode($students);
+  echo json_encode($recipes);
 }
 else 
 {
