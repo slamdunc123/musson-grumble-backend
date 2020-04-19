@@ -11,10 +11,13 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 
 error_reporting(E_ERROR);
 
+$id=$_GET['id'];
 $recipes = [];
 
 // $sql = "SELECT * FROM recipes";
-$sql = "SELECT recipes.id as id, recipes.name as name, recipes.category_id as c_id, recipes.description as description, recipes.ingredients as ingredients, recipes.instructions as instructions, recipes.suggestions as suggestions, categories.name as c_name FROM recipes, categories WHERE recipes.category_id = categories.id ORDER BY categories.name ASC";
+// $sql = "SELECT recipes.id as id, recipes.name as name, recipes.category_id as c_id, recipes.description as description, recipes.ingredients as ingredients, recipes.instructions as instructions, recipes.suggestions as suggestions, categories.name as c_name FROM recipes, categories WHERE recipes.category_id = categories.id ORDER BY categories.name ASC";
+$sql = "SELECT recipes.id as id, recipes.name as name, recipes.category_id as c_id, recipes.description as description, recipes.ingredients as ingredients, recipes.instructions as instructions, recipes.suggestions as suggestions, categories.name as c_name FROM recipes, categories WHERE recipes.category_id = categories.id AND categories.id ='{$id}' ORDER BY categories.name ASC";
+
 
 if($result = mysqli_query($con, $sql))
 {

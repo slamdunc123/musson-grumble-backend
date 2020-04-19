@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'musson_grumble');
+define('DB_NAME', 'musson_grumble_backend');
 
 // connect to database
 function connect(){
