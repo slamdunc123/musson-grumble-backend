@@ -23,6 +23,7 @@ if($result = mysqli_query($con, $sql))
   {
     $categories[$cr]['id'] = $row['id'];
     $categories[$cr]['name'] = $row['name'];
+    $categories[$cr]['description'] = $row['description'];
     $cr++;
   }
 
