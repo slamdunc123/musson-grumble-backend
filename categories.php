@@ -23,7 +23,9 @@ if($result = mysqli_query($con, $sql))
   {
     $categories[$cr]['id'] = $row['id'];
     $categories[$cr]['name'] = $row['name'];
+    $categories[$cr]['sub_title'] = $row['sub_title'];
     $categories[$cr]['description'] = $row['description'];
+    $categories[$cr]['img_url'] = $row['img_url'];
     $cr++;
   }
 
