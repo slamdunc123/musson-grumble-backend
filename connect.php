@@ -1,9 +1,21 @@
 <?php
-// db credentials
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'musson_grumble_backend');
+
+$isLive = true;
+
+if($isLive == true){
+  // db credentials
+  define('DB_HOST', 'localhost');
+  define('DB_USER', 'slamdunc_admin');
+  define('DB_PASS', 'PHPb0bbins1');
+  define('DB_NAME', 'slamdunc_musson_grumble');
+}else{
+  // db credentials
+  define('DB_HOST', 'localhost');
+  define('DB_USER', 'root');
+  define('DB_PASS', '');
+  define('DB_NAME', 'musson_grumble_backend');
+}
+
 
 // connect to database
 function connect(){
