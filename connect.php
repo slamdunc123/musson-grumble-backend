@@ -1,6 +1,6 @@
 <?php
 
-$isLive = true;
+$isLive = false;
 
 if($isLive == true){
   // db credentials
